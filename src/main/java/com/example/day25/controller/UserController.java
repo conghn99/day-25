@@ -30,7 +30,7 @@ public class UserController {
 
     // 1.1 Lấy danh sách users
     @GetMapping("user")
-    public List<User> geUserLists() {
+    public List<UserDTO> geUserLists() {
         return userService.getUserList();
     }
 

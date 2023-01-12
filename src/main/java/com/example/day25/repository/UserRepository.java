@@ -19,9 +19,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
             "where upper(u.name) like upper(concat('%', ?1, '%'))")
     List<UserDTO> findUserDtoByNameContainingIgnoreCase(String name);
 
-    List<User> findAll();
+    Optional<User> findById(Integer id);
 
-    List<User> findByNameContainingIgnoreCase(String name);
+    User save(User user);
 
-    Optional<User> findByEmail(String email);
+    void delete(User user);
 }
